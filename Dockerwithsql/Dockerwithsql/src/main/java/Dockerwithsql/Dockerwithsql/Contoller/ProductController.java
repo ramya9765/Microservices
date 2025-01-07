@@ -13,17 +13,17 @@ import Dockerwithsql.Dockerwithsql.Entity.Product;
 import Dockerwithsql.Dockerwithsql.Repository.ProductRepository;
 
 @RestController
-@RequestMapping("/Product")
+@RequestMapping("/product")
 public class ProductController {
      
 	@Autowired
 	private ProductRepository productrepo;
 	
-	@PostMapping("/save")
+	@PostMapping
 	public Product addProduct(@RequestBody Product pro) {
 		return productrepo.save(pro);
 	}
-	@GetMapping("/find")
+	@GetMapping
 	public List<Product> findProduct(){
 		return productrepo.findAll();
 		
